@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    @apply bg-slate-900 text-slate-100 min-h-screen antialiased;
+    font-family: var(--font-sans);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-950/20;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700/50 rounded-full hover:bg-slate-600/50 transition-colors;
+  }
+}
+
+@layer components {
+  /* Efek Glassmorphism Premium */
+  .glass-card {
+    @apply bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 shadow-2xl rounded-2xl;
+  }
+
+  .glass-card-hover {
+    @apply hover:bg-slate-900/80 hover:border-slate-700/50 transition-all duration-300;
+  }
+
+  .glass-sidebar {
+    @apply bg-slate-950/60 backdrop-blur-2xl border-r border-slate-900/80;
+  }
+
+  .glass-navbar {
+    @apply bg-slate-900/40 backdrop-blur-md border-b border-slate-900/50;
+  }
+
+  .glass-input {
+    @apply bg-slate-950/40 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500/80 focus:ring-1 focus:ring-indigo-500/50 transition-all duration-200;
+  }
+
+  /* Desain Table Premium */
+  .premium-table {
+    @apply w-full text-left border-collapse;
+  }
+
+  .premium-table th {
+    @apply px-6 py-4 bg-slate-950/40 text-slate-400 font-semibold text-xs uppercase tracking-wider border-b border-slate-800/80;
+  }
+
+  .premium-table td {
+    @apply px-6 py-4 border-b border-slate-800/40 text-sm align-middle;
+  }
+
+  .premium-table tr {
+    @apply hover:bg-slate-800/20 transition-colors duration-150;
+  }
+
+  /* Sleek Buttons */
+  .btn-primary {
+    @apply px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium rounded-xl shadow-lg shadow-indigo-600/20 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 active:scale-[0.98] transition-all duration-150;
+  }
+
+  .btn-secondary {
+    @apply px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-xl border border-slate-700/50 focus:outline-none focus:ring-2 focus:ring-slate-600 active:scale-[0.98] transition-all duration-150;
+  }
+
+  .btn-danger {
+    @apply px-5 py-2.5 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-medium rounded-xl shadow-lg shadow-red-600/20 focus:outline-none focus:ring-2 focus:ring-red-500/50 active:scale-[0.98] transition-all duration-150;
+  }
+}
